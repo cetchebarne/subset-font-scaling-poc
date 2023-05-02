@@ -1,3 +1,9 @@
+$spacing-base: 1.5rem;
+$spacing-mid: 3rem;
+$min-w: 22.5rem;
+$max-w: 118.125rem;
+$full-w: 100vw;
+
 .Card {
   width: 100%;
   background-color: white;
@@ -6,9 +12,22 @@
   flex-direction: column;
   justify-content: flex-start;
 
+  @media screen and (max-width: $min-w) {
+    &__body {
+      margin: $spacing-base 0 !important;
+    }
+  }
+
   &__body {
     max-width: 667px;
-    margin: 48px 0;
+    margin: calc(
+        $spacing-base +
+          (
+            ($full-w - $min-w) *
+              (($spacing-mid - $spacing-base) / ($max-w - $min-w))
+          )
+      )
+      0;
   }
 
   &__buttons {

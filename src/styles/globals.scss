@@ -1,9 +1,9 @@
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -104,4 +104,96 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+$h1-base: 2.5rem;
+$h1-mid: 6rem;
+$h2-base: 2.3rem;
+$h2-mid: 5rem;
+$h3-base: 2.0125rem;
+$h3-mid: 4rem;
+$h4-base: 1.725rem;
+$h4-mid: 3rem;
+$h5-base: 1.4375rem;
+$h5-mid: 2.5rem;
+$h6-base: 1.125rem;
+$h6-mid: 2rem;
+$body-base: 1rem;
+$body-mid: 1.25rem;
+
+$min-w: 20.5rem;
+$max-w: 82.5rem;
+$full-w: 100vw;
+
+@media screen and (max-width: $min-w) {
+  h1 {
+    font-size: $h1-base !important;
+  }
+
+  h2 {
+    font-size: $h2-base !important;
+  }
+
+  h3 {
+    font-size: $h3-base !important;
+  }
+
+  h4 {
+    font-size: $h4-base !important;
+  }
+
+  h5 {
+    font-size: $h5-base !important;
+  }
+
+  h6 {
+    font-size: $h6-base !important;
+  }
+
+  h6 {
+    font-size: $body-base !important;
+  }
+}
+
+h1 {
+  font-size: calc(
+    $h1-base + (($full-w - $min-w) * (($h1-mid - $h1-base) / ($max-w - $min-w)))
+  );
+}
+
+h2 {
+  font-size: calc(
+    $h2-base + (($full-w - $min-w) * (($h2-mid - $h2-base) / ($max-w - $min-w)))
+  );
+}
+
+h3 {
+  font-size: calc(
+    $h3-base + (($full-w - $min-w) * (($h3-mid - $h3-base) / ($max-w - $min-w)))
+  );
+}
+
+h4 {
+  font-size: calc(
+    $h4-base + (($full-w - $min-w) * (($h4-mid - $h4-base) / ($max-w - $min-w)))
+  );
+}
+
+h5 {
+  font-size: calc(
+    $h5-base + (($full-w - $min-w) * (($h5-mid - $h5-base) / ($max-w - $min-w)))
+  );
+}
+
+h6 {
+  font-size: calc(
+    $h6-base + (($full-w - $min-w) * (($h6-mid - $h6-base) / ($max-w - $min-w)))
+  );
+}
+
+body {
+  font-size: calc(
+    $body-base +
+      (($full-w - $min-w) * (($body-mid - $body-base) / ($max-w - $min-w)))
+  );
 }
